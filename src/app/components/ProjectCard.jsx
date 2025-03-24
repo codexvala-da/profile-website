@@ -2,7 +2,14 @@ import React from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
+const ProjectCard = ({
+  imgUrl,
+  title,
+  description,
+  gitUrl,
+  previewUrl,
+  skills = [],
+}) => {
   return (
     <div>
       <div className="h-52 md:h-72 rounded-t-xl relative group">
@@ -26,9 +33,22 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
           </Link>
         </div>
       </div>
-      <div className="text-white rounded-b-xl mt-3 bg-[#181818]py-6 px-4">
+      <div className="text-white rounded-b-xl mt-3 bg-[#181818] py-6 px-4">
         <h5 className="text-xl font-semibold mb-2">{title}</h5>
-        <p className="text-[#ADB7BE]">{description}</p>
+        <p className="text-[#ADB7BE] mb-4">{description}</p>
+
+        {skills.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-2">
+            {skills.map((skill, index) => (
+              <span
+                key={index}
+                className="text-xs bg-[#2D2D2D] text-[#ADB7BE] px-2 py-1 rounded-md"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
