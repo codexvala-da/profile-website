@@ -13,9 +13,9 @@ const ExampleComponent = () => {
         1000,
         "Turning ☕ into Code",
         1000,
-        "Hackathon Builder",
+        "Hackathon Whisperer",
         1000,
-        "Startups Enthusiast",
+        "Startup Enthusiast",
         1000,
       ]}
       wrapper="span"
