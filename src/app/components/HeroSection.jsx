@@ -41,7 +41,7 @@ const experienceData = [
 
 const HeroSection = () => {
   const [showExperienceModal, setShowExperienceModal] = useState(false);
-
+  const resumeLink = process.env.RESUME_LINK;
   return (
     <section>
       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -68,7 +68,14 @@ const HeroSection = () => {
               3+ Years Experience
             </button>
             <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-transparent hover:bg-slate-900 text-white border border-white mt-3 transition-colors">
-              <span>Download CV</span>
+              <a
+                href={resumeLink}
+                download="Daxil_Vala.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download CV
+              </a>
             </button>
           </div>
         </div>
