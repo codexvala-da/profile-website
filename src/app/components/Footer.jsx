@@ -14,7 +14,15 @@ const Footer = () => {
             className="md:w-[200px] md:h-[80px]" // Adjust responsive sizes if needed
           />
         </span>
-        <p className="text-slate-600">All rights reserved.</p>
+        <p className="text-slate-600">
+          Crafted with <span className="font-medium">React</span>,{" "}
+          <span className="font-medium">Next.js</span>, and{" "}
+          <span className="font-medium">Tailwind CSS</span> and{" "}
+          <span className=" font-medium">caffeine-powered focus</span>
+          .
+          <br />© {new Date().getFullYear()} All rights reserved. (Bug-free
+          guarantee not included.)
+        </p>
       </div>
     </footer>
   );

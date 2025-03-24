@@ -10,12 +10,10 @@ const ProjectCard = ({
   previewUrl,
   skills = [],
 }) => {
-  // Function to determine if URL is external
   const isExternalLink = (url) => {
     return url.startsWith("http") || url.startsWith("www");
   };
 
-  // Render external link
   const renderExternalLink = (url, children) => {
     return (
       <a
@@ -30,14 +28,14 @@ const ProjectCard = ({
   };
 
   return (
-    <div>
-      <div className="h-52 md:h-72 rounded-t-xl relative group">
+    <div className="bg-[#181818] rounded-xl shadow-lg">
+      <div className="h-52 md:h-72 rounded-t-xl relative group overflow-hidden">
         <img
           src={imgUrl}
           alt={title}
-          className="w-full h-full object-contain rounded-t-xl"
+          className="w-full h-full object-cover object-center"
         />
-        <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818]/80 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 ">
+        <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818]/90 hidden group-hover:flex group-hover:bg-opacity-90 transition-all duration-500">
           {isExternalLink(gitUrl) ? (
             renderExternalLink(
               gitUrl,
@@ -67,7 +65,7 @@ const ProjectCard = ({
           )}
         </div>
       </div>
-      <div className="text-white rounded-b-xl mt-3 bg-[#181818] py-6 px-4">
+      <div className="text-white rounded-b-xl bg-[#181818] py-6 px-4">
         <h5 className="text-xl font-semibold mb-2">{title}</h5>
         <p className="text-[#ADB7BE] mb-4">{description}</p>
 

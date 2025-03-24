@@ -45,11 +45,29 @@ const projectsData = [
     ],
   },
   {
+    id: 4,
+    title: "Clickstream Data Analysis for an Online Clothing Store",
+    description:
+      "This project analyzes user interactions with an online store specializing in maternity clothing. By studying clickstream data, it identifies browsing patterns, product engagement, and potential improvements in user experience.",
+    image: "/images/projects/4.png",
+    gitUrl: "https://github.com/codexvala-da/Clickstream-Data-Analysis",
+    previewUrl: "https://youtu.be/MSYzN7oJnAs?si=olESzLprfJQOomWE",
+    skills: [
+      "Data Analysis",
+      "Python",
+      "Pandas & NumPy",
+      "SQL",
+      "Data Visualization (Matplotlib, Seaborn)",
+      "Statistical Analysis",
+      "Clickstream Data Processing",
+    ],
+  },
+  {
     id: 3,
     title: "Stock Price Prediction Using LSTM in PyTorch",
     description:
       "This project implements a Long Short-Term Memory (LSTM) model using PyTorch to predict Amazon stock prices based on the last seven trading sessions. It involves data preprocessing, model training, evaluation, and visualization of stock price trends to enhance predictive accuracy.",
-    image: "/images/projects/2.png",
+    image: "/images/projects/3.png",
     gitUrl:
       "https://github.com/codexvala-da/lstm_implementation_using_pytorch/blob/main/LSTM_USING_PYTORCH.ipynb",
     previewUrl:
@@ -63,24 +81,6 @@ const projectsData = [
       "Python",
       "NumPy & Pandas",
       "Data Visualization",
-    ],
-  },
-  {
-    id: 4,
-    title: "Clickstream Data Analysis for an Online Clothing Store",
-    description:
-      "This project analyzes user interactions with an online store specializing in maternity clothing. By studying clickstream data, it identifies browsing patterns, product engagement, and potential improvements in user experience.",
-    image: "/images/projects/2.png",
-    gitUrl: "https://github.com/codexvala-da/Clickstream-Data-Analysis",
-    previewUrl: "https://youtu.be/MSYzN7oJnAs?si=olESzLprfJQOomWE",
-    skills: [
-      "Data Analysis",
-      "Python",
-      "Pandas & NumPy",
-      "SQL",
-      "Data Visualization (Matplotlib, Seaborn)",
-      "Statistical Analysis",
-      "Clickstream Data Processing",
     ],
   },
 ];
