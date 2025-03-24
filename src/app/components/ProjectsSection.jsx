@@ -71,8 +71,8 @@ const projectsData = [
     description:
       "This project analyzes user interactions with an online store specializing in maternity clothing. By studying clickstream data, it identifies browsing patterns, product engagement, and potential improvements in user experience.",
     image: "/images/projects/2.png",
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/codexvala-da/Clickstream-Data-Analysis",
+    previewUrl: "https://youtu.be/MSYzN7oJnAs?si=olESzLprfJQOomWE",
     skills: [
       "Data Analysis",
       "Python",
@@ -100,7 +100,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects">
+    <section id="projects" className="py-1">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         Projects
       </h2>

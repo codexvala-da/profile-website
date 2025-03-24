@@ -1,8 +1,47 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import ExampleComponent from "./ExampleComponent";
+import ExperienceModal from "./ExperienceModal";
+
+const experienceData = [
+  {
+    company: "Northeastern University",
+    role: "Graduate Researcher - Reasoning in AI Agents",
+    duration: "Feb 2025 – Present",
+    description:
+      "Conducting research under Professor Hong P. to enhance reasoning capabilities in LLM-based autonomous agents, focusing on improving inference and self-correction mechanisms. Contributing to the advancement of AI agent technologies through academic research and literature synthesis.",
+    url: "https://coe.northeastern.edu/people/pan-hong/",
+  },
+  {
+    company: "Apollo.io",
+    role: "Sr. Software Engineer",
+    duration: "1.5 Years",
+    description:
+      "Led key backend initiatives to optimize data systems and enhance user experience, driving efficiency improvements and increasing user engagement. Played a pivotal role in migrating and optimizing critical infrastructure for performance and scalability.",
+    url: "https://app.apollo.io/",
+  },
+  {
+    company: "Open Financial Technologies",
+    role: "Software Engineer",
+    duration: "8 Months",
+    description:
+      "Spearheaded architectural improvements to ensure the scalability and efficiency of the platform. Contributed to significant enhancements in system performance, enabling more efficient and streamlined processes for customers.",
+    url: "https://open.money/",
+  },
+  {
+    company: "Elocity",
+    role: "Founding Software Engineer",
+    duration: "2 Years",
+    description:
+      "As a founding team member, contributed to the early-stage development of EV charging solutions by building scalable infrastructure and optimizing platform performance. Led efforts to improve system efficiency and real-time analytics capabilities, driving product growth and adoption.",
+    url: "https://elocitytech.com/",
+  },
+];
 
 const HeroSection = () => {
+  const [showExperienceModal, setShowExperienceModal] = useState(false);
+
   return (
     <section>
       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -11,7 +50,7 @@ const HeroSection = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600">
               Hello I'm {""}
             </span>
-            <br></br>
+            <br />
             <ExampleComponent />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mt-6">
@@ -22,10 +61,13 @@ const HeroSection = () => {
             career and contributed to my growth.
           </p>
           <div>
-            <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-900 text-white hover:text-white mt-3">
-              Hire me
+            <button
+              onClick={() => setShowExperienceModal(true)}
+              className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:opacity-90 text-white mt-3 transition-opacity"
+            >
+              3+ Years Experience
             </button>
-            <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-transparent hover:bg-slate-900 text-white border border-white mt-3">
+            <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-transparent hover:bg-slate-900 text-white border border-white mt-3 transition-colors">
               <span>Download CV</span>
             </button>
           </div>
@@ -42,6 +84,13 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {showExperienceModal && (
+        <ExperienceModal
+          onClose={() => setShowExperienceModal(false)}
+          jobs={experienceData}
+        />
+      )}
     </section>
   );
 };
