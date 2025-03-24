@@ -11,16 +11,15 @@ const HeroSection = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600">
               Hello I'm {""}
             </span>
+            <br></br>
             <ExampleComponent />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mt-6">
-            Hello, I'm Daxil Vala, a proficient and self-driven software
-            engineer with a strong commitment to continuous learning and
-            personal development. Started my career as a early engineer being a
-            member of the founding team at @Elocity and everything upwards from
-            then. The exposure to fast paced development and wearing multiple
-            hats working at such an early age startup is something I am really
-            grateful about and took me a long way in my career.
+            Self-driven software engineer committed to continuous learning and
+            development. I began my career as an early engineer and founding
+            team member at Elocity, gaining invaluable experience in fast-paced
+            development and wearing multiple hats. This foundation has shaped my
+            career and contributed to my growth.
           </p>
           <div>
             <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-900 text-white hover:text-white mt-3">
@@ -32,13 +31,13 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="col-span-5 place-self-center mt-4 lg:mt-0">
-          <div className="rounded-full bg-[#181818] w-[250] h-[250] lg:w-[400px] lg:h-[400px] relative">
+          <div className="rounded-full bg-transparent w-[250] h-[250] lg:w-[400px] lg:h-[400px] relative">
             <Image
-              src="/images/toon.png"
+              src="/images/studying.png"
               alt="hero image"
               className="absolute transform -tranlate-x-1/2 -translate-y-0.5 -top-0.5 -left-0.5"
-              width={300}
-              height={300}
+              width={450}
+              height={450}
             />
           </div>
         </div>

@@ -5,14 +5,17 @@ const ExampleComponent = () => {
   return (
     <TypeAnimation
       sequence={[
-        // Same substring at the start will only be typed out once, initially
         "Daxil",
-        2000, // wait 1s before replacing "Mice" with "Hamsters"
-        "Backend Engineer",
+        2000,
+        "Software Engineer",
         1000,
-        "Startup head",
+        "Building Backends",
         1000,
-        "Hustler",
+        "Turning ☕ into Code",
+        1000,
+        "Hackathon Builder",
+        1000,
+        "Startups Enthusiast",
         1000,
       ]}
       wrapper="span"
