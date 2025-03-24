@@ -41,7 +41,7 @@ const experienceData = [
 
 const HeroSection = () => {
   const [showExperienceModal, setShowExperienceModal] = useState(false);
-  const resumeLink = process.env.RESUME_LINK;
+  const resumeLink = process.env.NEXT_PUBLIC_RESUME_LINK;
   return (
     <section>
       <div className="grid grid-cols-1 sm:grid-cols-12">
