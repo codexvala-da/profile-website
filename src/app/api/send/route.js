@@ -45,7 +45,7 @@ export async function POST(req) {
             </p>
             <p className="text-gray-600 leading-relaxed mb-6">
               This is an automated confirmation that your message has been
-              received. I'll review it and respond within 24 hours.
+              received. I&apos;ll review it and respond within 24 hours.
             </p>
 
             {/* Message Preview */}
