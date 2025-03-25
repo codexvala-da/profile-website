@@ -176,13 +176,13 @@ const TAB_DATA = [
       {
         institution: "Northeastern University",
         degree: "MS in Information Systems",
-        year: "2024",
+        year: "2024 - 2026",
         icon: <GraduationCap className="w-8 h-8 text-blue-500" />,
       },
       {
-        institution: "National Institute of Technology Karnataka (NITK)",
-        degree: "Undergraduate in Engineering",
-        year: "2020",
+        institution: "National Institute of Technology Karnataka (Surathkal)",
+        degree: "Undergraduate in Electrical Engineering",
+        year: "2017 - 2021",
         icon: <GraduationCap className="w-8 h-8 text-green-500" />,
       },
     ],
