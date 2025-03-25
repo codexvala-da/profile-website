@@ -119,7 +119,7 @@ const TAB_DATA = [
             icon: getSkillIcon("Docker"),
           },
           {
-            name: "Kafka",
+            name: "Apache Kafka",
             icon: getSkillIcon("apachekafka"),
           },
           {
