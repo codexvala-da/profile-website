@@ -1,18 +1,17 @@
 "use client";
-import React, { useState, useRef } from "react";
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import ProjectCard from "./ProjectCard";
-import { motion, useInView } from "framer-motion";
+"use client";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
 const projectsData = [
   {
     id: 1,
     title: "RareSense : AI diagnostic tool",
-    description:
-      "RareSense is a prototype leveraging LLM agents to improve differential diagnosis by prioritizing phenotypes. The system extracts relevant phenotypic information from clinical notes and suggests related phenotypes, enhancing the confidence score of diagnoses. The project aims to assist healthcare professionals in identifying rare diseases more effectively.",
-    image: "/images/projects/1.png",
-    gitUrl: "https://github.com/codexvala-da/Harvard-Rare-Diseases-Hackathon",
-    previewUrl: "https://www.youtube.com/watch?v=8IrL0S5FiaA",
+    motivation:
+      "Rare diseases often go undiagnosed due to complex symptom profiles and limited diagnostic capabilities.",
+    goal: "Develop an AI-powered tool that assists healthcare professionals in more accurately identifying and diagnosing rare diseases.",
+    work: "Created an LLM-based system that extracts phenotypic information from clinical notes, prioritizes potential diagnoses, and suggests related phenotypes to improve diagnostic confidence.",
     skills: [
       "Large Language Models (LLMs)",
       "Natural Language Processing (NLP)",
@@ -20,124 +19,213 @@ const projectsData = [
       "Python",
       "Prompt Engineering",
       "Flask",
-      "Data Extraction and Preprocessing",
+      "Data Extraction",
       "Machine Learning",
     ],
+    image: "/images/projects/1.png",
+    gitUrl: "https://github.com/codexvala-da/Harvard-Rare-Diseases-Hackathon",
+    previewUrl: "https://www.youtube.com/watch?v=8IrL0S5FiaA",
   },
   {
     id: 2,
     title: "Enhanced The Graph Network Subgraph Explorer",
-    description:
-      "Builds upon the foundational subgraphs of Lido Finance by incorporating optimized GraphQL queries for more efficient data retrieval. The enhancements improve the performance and scalability of querying blockchain data, making it easier to extract relevant insights from decentralized networks.",
-    image: "/images/projects/2.png",
-    gitUrl: "https://github.com/codexvala-da/lido_modified_sub",
-    previewUrl:
-      "https://thegraph.com/explorer/subgraphs/fdeuzYk95szmAu7ZsNj6vXYrwNfGSudaVyXz8GkEMVY?view=Query&chain=arbitrum-one",
+    motivation:
+      "Blockchain data querying can be inefficient and complex, limiting insights for developers and researchers.",
+    goal: "Optimize GraphQL queries for Lido Finance subgraphs to improve data retrieval performance and scalability.",
+    work: "Developed enhanced subgraph queries that streamline blockchain data indexing, making it easier to extract and analyze complex blockchain network information.",
     skills: [
       "GraphQL",
       "Subgraph Development",
       "The Graph Protocol",
       "Blockchain Data Indexing",
       "Optimization Techniques",
-      "Query Performance Optimization",
+      "Query Performance",
       "TypeScript",
       "Node.js",
     ],
+    image: "/images/projects/2.png",
+    gitUrl: "https://github.com/codexvala-da/lido_modified_sub",
+    previewUrl:
+      "https://thegraph.com/explorer/subgraphs/fdeuzYk95szmAu7ZsNj6vXYrwNfGSudaVyXz8GkEMVY?view=Query&chain=arbitrum-one",
   },
   {
-    id: 4,
-    title: "Clickstream Data Analysis for an Online Clothing Store",
-    description:
-      "This project analyzes user interactions with an online store specializing in maternity clothing. By studying clickstream data, it identifies browsing patterns, product engagement, and potential improvements in user experience.",
-    image: "/images/projects/4.png",
-    gitUrl: "https://github.com/codexvala-da/Clickstream-Data-Analysis",
-    previewUrl: "https://youtu.be/MSYzN7oJnAs?si=olESzLprfJQOomWE",
+    id: 3,
+    title: "Clickstream Processing & User Behavior Insights",
+    motivation:
+      "Understanding user behavior is crucial for improving online shopping experiences, especially in niche markets.",
+    goal: "Analyze user interactions in an online maternity clothing store to identify browsing patterns and potential UX improvements.",
+    work: "Conducted comprehensive clickstream data analysis using Python, extracting insights into user engagement, product interactions, and navigation patterns.",
     skills: [
       "Data Analysis",
       "Python",
       "Pandas & NumPy",
       "SQL",
-      "Data Visualization (Matplotlib, Seaborn)",
-      "Statistical Analysis",
-      "Clickstream Data Processing",
-    ],
-  },
-  {
-    id: 3,
-    title: "Stock Price Prediction Using LSTM in PyTorch",
-    description:
-      "This project implements a Long Short-Term Memory (LSTM) model using PyTorch to predict Amazon stock prices based on the last seven trading sessions. It involves data preprocessing, model training, evaluation, and visualization of stock price trends to enhance predictive accuracy.",
-    image: "/images/projects/3.png",
-    gitUrl:
-      "https://github.com/codexvala-da/lstm_implementation_using_pytorch/blob/main/LSTM_USING_PYTORCH.ipynb",
-    previewUrl:
-      "https://github.com/codexvala-da/lstm_implementation_using_pytorch/blob/main/README.md",
-    skills: [
-      "Deep Learning",
-      "PyTorch",
-      "LSTM Networks",
-      "Time Series Analysis",
-      "Data Preprocessing",
-      "Python",
-      "NumPy & Pandas",
       "Data Visualization",
+      "Statistical Analysis",
+      "Clickstream Processing",
     ],
+    image: "/images/projects/3.png",
+    gitUrl: "https://github.com/codexvala-da/Clickstream-Data-Analysis",
+    previewUrl: "https://youtu.be/MSYzN7oJnAs?si=olESzLprfJQOomWE",
   },
 ];
 
-const ProjectsSection = () => {
-  const [visibleProjects, setVisibleProjects] = useState(3);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+const ProjectCarousel = () => {
+  const [currentProject, setCurrentProject] = useState(0);
 
-  const handleShowMore = () => {
-    setVisibleProjects((prevVisible) => prevVisible + 3);
+  const nextProject = () => {
+    setCurrentProject((prev) => (prev + 1) % projectsData.length);
   };
 
-  const cardVariants = {
-    initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
+  const prevProject = () => {
+    setCurrentProject(
+      (prev) => (prev - 1 + projectsData.length) % projectsData.length
+    );
   };
+
+  const project = projectsData[currentProject];
 
   return (
-    <section id="projects" className="py-1">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
-        Projects
-      </h2>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12 mb-8">
-        {projectsData.slice(0, visibleProjects).map((project, index) => (
-          <motion.li
-            key={index}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
-          >
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
-              skills={project.skills}
-            />
-          </motion.li>
-        ))}
-      </ul>
-      {projectsData.length > visibleProjects && (
-        <div className="flex justify-center">
+    <section
+      id="projects"
+      className="py-12 min-h-screen flex items-center justify-center"
+    >
+      <div className="container mx-auto px-4 max-w-6xl">
+        <h2 className="text-center text-4xl font-bold text-white mb-12">
+          Projects
+        </h2>
+
+        <div className="relative flex flex-col md:flex-row items-center">
+          {/* Previous Project Button - Desktop and Mobile */}
           <button
-            onClick={handleShowMore}
-            className="group flex items-center justify-center p-2 rounded-full bg-primary-500 hover:bg-primary-600 transition duration-300"
-            aria-label="Show more projects"
+            onClick={prevProject}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[#2D2D2D]/60 hover:bg-[#3D3D3D] p-2 rounded-full shadow-lg 
+            md:-translate-x-1/2 sm:block sm:z-20"
           >
-            <ChevronDownIcon className="h-8 w-8 text-white group-hover:animate-bounce" />
+            <ChevronLeftIcon className="h-6 w-6 md:h-8 md:w-8 text-white" />
+          </button>
+
+          {/* Project Card */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentProject}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+              className="flex-grow bg-[#181818] rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row w-full"
+            >
+              {/* Image Section */}
+              <div className="md:w-1/2 h-64 md:h-[500px] relative">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black/50 p-4">
+                  <h3 className="text-xl md:text-2xl font-bold text-white">
+                    {project.title}
+                  </h3>
+                </div>
+              </div>
+
+              {/* Project Details Section */}
+              <div className="md:w-1/2 p-6 md:p-8 text-white flex flex-col justify-between overflow-y-auto max-h-[500px]">
+                <div>
+                  <div className="mb-4 md:mb-6">
+                    <h4 className="text-lg md:text-xl font-semibold text-[#ADB7BE] mb-2">
+                      Motivation
+                    </h4>
+                    <p className="text-sm md:text-base text-[#E5E7EB]">
+                      {project.motivation}
+                    </p>
+                  </div>
+
+                  <div className="mb-4 md:mb-6">
+                    <h4 className="text-lg md:text-xl font-semibold text-[#ADB7BE] mb-2">
+                      Goal
+                    </h4>
+                    <p className="text-sm md:text-base text-[#E5E7EB]">
+                      {project.goal}
+                    </p>
+                  </div>
+
+                  <div className="mb-4 md:mb-6">
+                    <h4 className="text-lg md:text-xl font-semibold text-[#ADB7BE] mb-2">
+                      Work
+                    </h4>
+                    <p className="text-sm md:text-base text-[#E5E7EB]">
+                      {project.work}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg md:text-xl font-semibold text-[#ADB7BE] mb-2">
+                      Tech Skills
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.skills.map((skill, index) => (
+                        <span
+                          key={index}
+                          className="text-xs bg-[#2D2D2D] text-[#ADB7BE] px-2 py-1 rounded-md"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Project Links */}
+                <div className="mt-4 md:mt-6 flex space-x-4">
+                  <a
+                    href={project.gitUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#2D2D2D] hover:bg-[#3D3D3D] text-white px-4 py-2 rounded-md flex items-center text-sm md:text-base"
+                  >
+                    View Code
+                  </a>
+                  <a
+                    href={project.previewUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-md flex items-center text-sm md:text-base"
+                  >
+                    Preview
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Next Project Button - Desktop and Mobile */}
+          <button
+            onClick={nextProject}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[#2D2D2D]/60 hover:bg-[#3D3D3D] p-2 rounded-full shadow-lg 
+            md:translate-x-1/2 sm:block sm:z-20"
+          >
+            <ChevronRightIcon className="h-6 w-6 md:h-8 md:w-8 text-white" />
           </button>
         </div>
-      )}
+
+        {/* Pagination Dots */}
+        <div className="flex justify-center mt-8 space-x-2">
+          {projectsData.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentProject(index)}
+              className={`h-3 w-3 rounded-full ${
+                index === currentProject
+                  ? "bg-white"
+                  : "bg-[#2D2D2D]/60 hover:bg-[#3D3D3D]"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
 
-export default ProjectsSection;
+export default ProjectCarousel;

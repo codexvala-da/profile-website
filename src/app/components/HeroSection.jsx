@@ -54,11 +54,11 @@ const HeroSection = () => {
             <ExampleComponent />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mt-6">
-            Self-driven software engineer committed to continuous learning and
-            development. I began my career as an early engineer and founding
-            team member at Elocity, gaining invaluable experience in fast-paced
-            development and wearing multiple hats. This foundation has shaped my
-            career and contributed to my growth.
+            A software engineer who loves untangling technical puzzles with
+            people, not just for them. I thrive where curiosity meets teamwork.
+            I began my career as an early engineer and founding team member at
+            Elocity, I&apos;m most proud of the relationships I&apos;ve built
+            while .
           </p>
           <div>
             <button
