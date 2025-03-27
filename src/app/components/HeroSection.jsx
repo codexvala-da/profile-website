@@ -55,10 +55,12 @@ const HeroSection = () => {
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mt-6">
             A software engineer who loves untangling technical puzzles with
-            people, not just for them. I thrive where curiosity meets teamwork.
-            I began my career as an early engineer and founding team member at
-            Elocity, I&apos;m most proud of the relationships I&apos;ve built
-            while .
+            people, not just for them. My journey into tech began with late
+            nights, endless tutorials, and a stubborn belief that anyone can
+            learn to code. That hustle paid off when I became a founding
+            engineer at Elocity, where I wore every hat imaginable, from
+            debugging at 2 AM to collaborating with tech team on product vision
+            and brainstorming roadmaps over chai.
           </p>
           <div>
             <button
