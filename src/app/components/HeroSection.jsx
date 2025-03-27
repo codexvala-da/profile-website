@@ -39,6 +39,10 @@ const experienceData = [
   },
 ];
 
+const handleResumeDownload = () => {
+  track("Resume Download", {}, { flags: ["resume-download"] });
+};
+
 const HeroSection = () => {
   const [showExperienceModal, setShowExperienceModal] = useState(false);
   const resumeLink =
@@ -76,6 +80,7 @@ const HeroSection = () => {
                 download="Daxil_Vala.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleResumeDownload}
               >
                 Download CV
               </a>
