@@ -330,8 +330,8 @@ const AboutSection = () => {
             who&apos;s become my unofficial running buddy—and who always demands
             the belly rubs I owe him. <br />
             P.S. I&apos;ve learned that debugging code and winning over shy dogs
-            share a secret: success hinges on patience, persistence, and
-            snack-based diplomacy.
+            share a secret -- success hinges on patience, persistence, and most
+            importantly snacks.
           </p>
           <div className="flex flex-wrap justify-start mb-8">
             {TAB_DATA.map((tabItem) => (
