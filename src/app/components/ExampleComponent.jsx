@@ -5,7 +5,7 @@ const ExampleComponent = () => {
   return (
     <TypeAnimation
       sequence={[
-        "Daxil",
+        "Daxil (Dee)",
         2000,
         "Software Engineer",
         1000,
