@@ -7,11 +7,11 @@ import ExperienceModal from "./ExperienceModal";
 const experienceData = [
   {
     company: "Northeastern University",
-    role: "Graduate Researcher - Reasoning in AI Agents",
-    duration: "Feb 2025 – Present",
+    role: "Graduate Student",
+    duration: "Aug 2024 – Present",
     description:
       "Conducting research under Professor Hong P. to enhance reasoning capabilities in LLM-based autonomous agents, focusing on improving inference and self-correction mechanisms. Contributing to the advancement of AI agent technologies through academic research and literature synthesis.",
-    url: "https://coe.northeastern.edu/people/pan-hong/",
+    url: "https://www.northeastern.edu/",
   },
   {
     company: "Apollo.io",

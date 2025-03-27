@@ -307,13 +307,18 @@ const AboutSection = () => {
   return (
     <section className="text-white" id="about">
       <div className="container mx-auto md:grid md:grid-cols-2 gap-8 items-center py-16 px-4 xl:gap-16">
-        <Image
-          src="/images/about-image.png"
-          width={500}
-          height={500}
-          alt="Portrait of Daxil Vala"
-          className="rounded-xl shadow-lg"
-        />
+        <div className="top-24 self-start">
+          {" "}
+          {/* Added sticky container */}
+          <Image
+            src="/images/LinkedIn.jpeg"
+            width={500}
+            height={500}
+            alt="Portrait of Daxil Vala"
+            className="rounded-xl shadow-lg"
+            objectPosition="top"
+          />
+        </div>
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg text-gray-300 mb-8">
@@ -333,7 +338,7 @@ const AboutSection = () => {
             share a secret -- success hinges on patience, persistence, and most
             importantly snacks.
           </p>
-          <div className="flex flex-wrap justify-start mb-8">
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
             {TAB_DATA.map((tabItem) => (
               <TabButton
                 key={tabItem.id}
