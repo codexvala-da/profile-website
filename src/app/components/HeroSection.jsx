@@ -41,7 +41,8 @@ const experienceData = [
 
 const HeroSection = () => {
   const [showExperienceModal, setShowExperienceModal] = useState(false);
-  const resumeLink = process.env.NEXT_PUBLIC_RESUME_LINK;
+  const resumeLink =
+    "https://drive.google.com/file/d/1JzxmzHub5Fui346b5BlH8QRYUXi2sCUN/view?usp=sharing";
   return (
     <section>
       <div className="grid grid-cols-1 sm:grid-cols-12">
