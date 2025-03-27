@@ -320,15 +320,15 @@ const AboutSection = () => {
             My journey into tech began in an unlikely place: a bachelor&apos;s
             degree in Electrical and Electronics Engineering. While debugging
             circuits and designing systems, I realized my true passion
-            wasn&apos;t just how things worked—it was why they mattered to
+            wasn&apos;t just how things worked -- it was why they mattered to
             people in their daily lives. <br />
             When I&apos;m not engineering, I&apos;m probably hunting down
             hole-in-the-wall restaurants to try new cuisines (ask me about the
             best biryani in town!) or balancing out all that indulgence with
             evening runs. <br />
             If I&apos;m lucky, I&apos;ll bump into my neighbor&apos;s dog,
-            who&apos;s become my unofficial running buddy—and who always demands
-            the belly rubs I owe him. <br />
+            who&apos;s become my unofficial running buddy who always demands the
+            belly rubs I owe him. <br />
             P.S. I&apos;ve learned that debugging code and winning over shy dogs
             share a secret -- success hinges on patience, persistence, and most
             importantly snacks.
