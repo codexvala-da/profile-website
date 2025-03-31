@@ -323,10 +323,12 @@ const AboutSection = () => {
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg text-gray-300 mb-8">
             My journey into tech began in an unlikely place: a bachelor&apos;s
-            degree in Electrical and Electronics Engineering. While debugging
-            circuits and designing systems, I realized my true passion
-            wasn&apos;t just how things worked -- it was why they mattered to
-            people in their daily lives. <br />
+            degree in Electrical and Electronics Engineering. However, along the
+            way, I realized that my true passion lay not just in understanding
+            hardware but in building software that could solve real-world
+            problems at scale. This curiosity led me to explore programming,
+            algorithms, and system design, ultimately steering me toward a
+            career as a SDE. <br />
             When I&apos;m not engineering, I&apos;m probably hunting down
             hole-in-the-wall restaurants to try new cuisines (ask me about the
             best biryani in town!) or balancing out all that indulgence with

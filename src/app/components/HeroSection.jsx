@@ -15,7 +15,7 @@ const experienceData = [
   },
   {
     company: "Apollo.io",
-    role: "Sr. Software Engineer",
+    role: "Backend Engineer",
     duration: "1.5 Years",
     description:
       "Led key backend initiatives to optimize data systems and enhance user experience, driving efficiency improvements and increasing user engagement. Played a pivotal role in migrating and optimizing critical infrastructure for performance and scalability.",
@@ -46,7 +46,7 @@ const handleResumeDownload = () => {
 const HeroSection = () => {
   const [showExperienceModal, setShowExperienceModal] = useState(false);
   const resumeLink =
-    "https://drive.google.com/file/d/1HGTehte3ifG6KYYnzDWxIgPAzyo12ZAC/view?usp=sharing";
+    "https://drive.google.com/file/d/1UmhF7OOf1ZjPE05aMMw3MooTlaIVhwAs/view?usp=sharing";
   return (
     <section>
       <div className="grid grid-cols-1 sm:grid-cols-12">
