@@ -5,7 +5,7 @@ const ExampleComponent = () => {
   return (
     <TypeAnimation
       sequence={[
-        "Daxil (Dee)",
+        "Daxil (Dax)",
         2000,
         "Software Engineer",
         1000,
@@ -13,9 +13,9 @@ const ExampleComponent = () => {
         1000,
         "Turning ☕ into Code",
         1000,
-        "Hackathon Whisperer",
+        "Hackathon Enthusiast",
         1000,
-        "Startup Enthusiast",
+        "Startup Geek",
         1000,
       ]}
       wrapper="span"
