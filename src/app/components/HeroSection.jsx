@@ -46,7 +46,7 @@ const handleResumeDownload = () => {
 const HeroSection = () => {
   const [showExperienceModal, setShowExperienceModal] = useState(false);
   const resumeLink =
-    "https://drive.google.com/file/d/1UmhF7OOf1ZjPE05aMMw3MooTlaIVhwAs/view?usp=sharing";
+    "https://drive.google.com/file/d/1NNCHk7Hgn2plTXgUlnKJ8fCHlk7XLiWX/view?usp=sharing";
   return (
     <section>
       <div className="grid grid-cols-1 sm:grid-cols-12">
