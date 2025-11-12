@@ -6,12 +6,12 @@ import ExperienceModal from "./ExperienceModal";
 
 const experienceData = [
   {
-    company: "Northeastern University",
+    company: "Medlaunch Concepts",
     role: "Graduate Student",
     duration: "Aug 2024 – Present",
     description:
-      "Conducting research under Professor Hong P. to enhance reasoning capabilities in LLM-based autonomous agents, focusing on improving inference and self-correction mechanisms. Contributing to the advancement of AI agent technologies through academic research and literature synthesis.",
-    url: "https://www.northeastern.edu/",
+      "Developed “Clara”, an AI-powered assistant with AWS Bedrock & LangChain, and a survey management system using Node.js and MongoDB — enabling automated policy responses, team collaboration, and performance insights.",
+    url: "https://www.medlaunchconcepts.com/",
   },
   {
     company: "Apollo.io",
