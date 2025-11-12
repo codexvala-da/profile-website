@@ -7,10 +7,10 @@ import ExperienceModal from "./ExperienceModal";
 const experienceData = [
   {
     company: "Medlaunch Concepts",
-    role: "Graduate Student",
-    duration: "Aug 2024 – Present",
+    role: "Founding Software Engineer Co-op",
+    duration: "May 2025 – Present",
     description:
-      "Developed “Clara”, an AI-powered assistant with AWS Bedrock & LangChain, and a survey management system using Node.js and MongoDB — enabling automated policy responses, team collaboration, and performance insights.",
+      "Developed “Clara”, an AI-powered assistant with AWS Bedrock & LangChain, and a survey management system using Node.js and MongoDB, enabling automated policy responses, team collaboration, and performance insights.",
     url: "https://www.medlaunchconcepts.com/",
   },
   {
@@ -46,7 +46,7 @@ const handleResumeDownload = () => {
 const HeroSection = () => {
   const [showExperienceModal, setShowExperienceModal] = useState(false);
   const resumeLink =
-    "https://drive.google.com/file/d/1noJQhmkUOZ1FJiaZJfKydOnIAHokhpXB/view?usp=sharing";
+    "https://drive.google.com/file/d/1_ga5-PqkmIqjQByA74k6kbcIOCwdUhg9/view?usp=sharing";
   return (
     <section>
       <div className="grid grid-cols-1 sm:grid-cols-12">
