@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { profile } from "@/content";
 import ResumeLink from "./ResumeLink";
 
 const links = [
@@ -13,6 +14,7 @@ const links = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState<string | null>(null);
+  const [showName, setShowName] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -33,9 +35,18 @@ export default function Nav() {
       if (el) observer.observe(el);
     }
 
+    // Show the name in the bar only once the page heading has scrolled away,
+    // so it never appears twice on screen.
+    const nameObserver = new IntersectionObserver(([entry]) => setShowName(!entry.isIntersecting), {
+      rootMargin: "-56px 0px 0px 0px",
+    });
+    const heading = document.getElementById("name");
+    if (heading) nameObserver.observe(heading);
+
     return () => {
       window.removeEventListener("scroll", onScroll);
       observer.disconnect();
+      nameObserver.disconnect();
     };
   }, []);
 
@@ -48,10 +59,13 @@ export default function Nav() {
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-6 sm:px-8">
         <a
           href="#"
-          aria-label="Back to top"
-          className="flex size-8 items-center justify-center rounded-lg bg-fg font-serif text-[15px] text-bg transition-opacity hover:opacity-85"
+          aria-hidden={!showName}
+          tabIndex={showName ? undefined : -1}
+          className={`text-sm font-semibold tracking-tight transition-all duration-300 ${
+            showName ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-1 opacity-0"
+          }`}
         >
-          DV
+          {profile.name}
         </a>
         <nav aria-label="Sections" className="flex items-center gap-4 text-sm sm:gap-6">
           {links.map((link) => (

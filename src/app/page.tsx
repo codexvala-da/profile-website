@@ -92,7 +92,9 @@ export default function Home() {
       <Nav />
       <main className="mx-auto max-w-5xl px-6 pb-16 pt-14 sm:px-8 sm:pt-20">
         <header>
-          <h1 className="font-serif text-5xl tracking-tight sm:text-6xl">{profile.name}</h1>
+          <h1 id="name" className="text-4xl font-bold tracking-tight sm:text-5xl">
+            {profile.name}
+          </h1>
           <p className="mt-1 text-muted">Backend &amp; AI engineer, {profile.location}</p>
         </header>
 
