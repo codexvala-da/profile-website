@@ -90,13 +90,13 @@ export default function Home() {
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[34rem] bg-[radial-gradient(var(--line)_1px,transparent_1px)] [background-size:22px_22px] [mask-image:linear-gradient(to_bottom,black,transparent)]"
       />
       <Nav />
-      <main className="mx-auto max-w-[46rem] px-6 pb-16 pt-14 sm:pt-20">
+      <main className="mx-auto max-w-5xl px-6 pb-16 pt-14 sm:px-8 sm:pt-20">
         <header>
           <h1 className="font-serif text-5xl tracking-tight sm:text-6xl">{profile.name}</h1>
           <p className="mt-1 text-muted">Backend &amp; AI engineer, {profile.location}</p>
         </header>
 
-        <div className="mt-10 space-y-5 text-[17px] leading-[1.75] text-muted">
+        <div className="mt-10 max-w-3xl space-y-5 text-[17px] leading-[1.75] text-muted">
           <p>
             Hi, I&apos;m Daxil. I work on backend systems and, more recently, LLM agents and retrieval
             pipelines. I&apos;ve been an early engineer at {companyLink("Elocity")} and{" "}
@@ -168,7 +168,7 @@ export default function Home() {
         </Section>
 
         <Section id="about" title="A bit more">
-          <div className="space-y-5 text-[17px] leading-[1.75] text-muted">
+          <div className="max-w-3xl space-y-5 text-[17px] leading-[1.75] text-muted">
             <p>
               I studied electrical engineering at NIT Karnataka and slowly drifted toward the software side,
               which is where I&apos;ve stayed. Most of what I know I learned by owning things in production,
@@ -177,7 +177,7 @@ export default function Home() {
             <p>
               At Northeastern I&apos;ve also served on the Graduate Student Government, first helping plan
               events and later looking after its website. Outside of all that, I like finding small local
-              restaurants (always happy to talk about biryani) and going for evening runs.
+              restaurants and going for evening runs.
             </p>
           </div>
 
@@ -198,7 +198,7 @@ export default function Home() {
         </Section>
 
         <Section id="contact" title="Say hello">
-          <p className="text-[17px] leading-[1.75] text-muted">
+          <p className="max-w-3xl text-[17px] leading-[1.75] text-muted">
             Email is the easiest way to reach me, at{" "}
             <a href={`mailto:${profile.email}`} className={link}>
               {profile.email}
@@ -206,7 +206,7 @@ export default function Home() {
             . Whether it&apos;s about a role, a project, or something you think I&apos;d find interesting,
             I&apos;d be glad to hear from you. You can also leave a note below.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 max-w-3xl">
             <ContactForm />
           </div>
         </Section>

@@ -45,7 +45,7 @@ export default function Nav() {
         scrolled ? "border-b border-line bg-bg/80 backdrop-blur-md" : "border-b border-transparent"
       }`}
     >
-      <div className="mx-auto flex h-14 max-w-[46rem] items-center justify-between px-6">
+      <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-6 sm:px-8">
         <a
           href="#"
           aria-label="Back to top"
